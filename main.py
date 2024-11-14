@@ -138,12 +138,11 @@ def main(input, quantum):
             break
 
     cpu_use = (time - cpu_idle) / time
-    print(cpu_idle)
     avg_tat = sum(tat) / len(tat) if len(tat) > 0 else 0
     avg_wt = sum(wt) / len(wt) if len(wt) > 0 else 0
     print(f"Time: {time} - Avg CPU utilization: {cpu_use:.2f}% - Avg TAT: {avg_tat:.2f} - Avg WT: {avg_wt:.2f}")
 
 if __name__ == '__main__':
     input = sys.argv[1]
-    quantum = sys.argv[2]
+    quantum = int(sys.argv[2])
     main(input, quantum)
